@@ -65,7 +65,7 @@ def get_theme(name):
 
 
 def get_all_themes():
-    return THEME_DATA.values()
+    return list(THEME_DATA.values())
 
 
 def get_theme_by_pk(pk):

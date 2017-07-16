@@ -68,7 +68,7 @@ def get_character(name):
 
 
 def get_all_character():
-    return CHARACTER_DATA.values()
+    return list(CHARACTER_DATA.values())
 
 
 def get_character_by_pk(pk):
