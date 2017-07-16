@@ -432,7 +432,7 @@ def generate_decor(path, num_tiles):
     decor = []
     decor_count = 0
     for dec in DECOR_DATA:
-        for i in range(0, DECOR_DATA[dec]['ratio'] * num_tiles / DECOR_SUM):
+        for i in range(0, DECOR_DATA[dec]['ratio'] * num_tiles // DECOR_SUM):
             if (decor_count + num_tiles < WIDTH * HEIGHT):
                 if dec == 'bush':
                     place_bush(dec, decor, path)
