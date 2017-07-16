@@ -36,8 +36,7 @@
 # identified as the original program.
 from itertools import chain
 
-import permissions
-from models import Block, LevelBlock, LevelDecor
+from .models import Block, LevelBlock, LevelDecor
 
 from game.decor import get_decor_element
 from game.theme import get_theme_by_pk
