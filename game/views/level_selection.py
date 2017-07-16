@@ -45,7 +45,7 @@ from django.db.models import Max
 from game import random_road
 from game.cache import cached_episode
 from game.models import Attempt, Episode
-from level_editor import play_anonymous_level
+from .level_editor import play_anonymous_level
 from django.core.cache import cache
 from game import app_settings
 

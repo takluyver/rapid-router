@@ -43,7 +43,7 @@ from django.http import Http404, HttpResponse
 from django.shortcuts import render, get_object_or_404
 from django.template import RequestContext
 from django.utils.translation import ugettext
-from helper import renderError
+from .helper import renderError
 from game.forms import LevelModerationForm
 from game.models import Level
 from portal.models import Student, Class

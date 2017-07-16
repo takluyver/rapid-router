@@ -104,7 +104,7 @@ def get_decor_element(name, theme):
 
 
 def get_all_decor():
-    return DECOR_DATA.values()
+    return list(DECOR_DATA.values())
 
 
 def get_decor_element_by_pk(pk):

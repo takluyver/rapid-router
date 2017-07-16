@@ -51,7 +51,7 @@ from game import app_settings
 from game.cache import cached_default_level, cached_episode, \
         cached_custom_level, cached_level_decor, cached_level_blocks
 from game.models import Level, Attempt, Workspace
-from helper import renderError
+from .helper import renderError
 from game.decor import get_decor_element
 from game.views.level_solutions import solutions
 
