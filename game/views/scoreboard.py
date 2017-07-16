@@ -45,7 +45,7 @@ from django.utils.translation import ugettext_lazy
 import game.messages as messages
 import game.permissions as permissions
 from game.views.scoreboard_csv import scoreboard_csv
-from helper import renderError
+from .helper import renderError
 from game.forms import ScoreboardForm
 from game.models import Level, Attempt, sort_levels
 from portal.models import Class, Teacher, Student

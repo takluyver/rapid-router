@@ -39,10 +39,10 @@ import json
 import math
 import random
 
-import level_management
+from . import level_management
 
 from collections import defaultdict, namedtuple
-from models import Level, Block
+from .models import Level, Block
 
 from game.decor import get_decor_element
 from game.theme import get_theme

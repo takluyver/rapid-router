@@ -36,8 +36,8 @@
 # identified as the original program.
 from django import forms
 from django.utils.translation import ugettext
-from models import UserProfile, Level
-from widgets import DropDownMenuSelectMultiple
+from .models import UserProfile, Level
+from .widgets import DropDownMenuSelectMultiple
 import itertools
 
 
