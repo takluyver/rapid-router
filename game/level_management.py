@@ -121,7 +121,7 @@ def get_night_blocks(level):
     coreBlockTypes = ['move_forwards', 'turn_left', 'turn_right', 'turn_around', 'controls_repeat',
                       'controls_repeat_until', 'controls_if', 'at_destination', 'road_exists', 'dead_end']
     coreNightBlocks = Block.objects.filter(type__in=coreBlockTypes)
-    coreNightLevelBlocks = map(lambda block: LevelBlock(level=level, type=block), coreNightBlocks)
+    coreNightLevelBlocks = [LevelBlock(level=level, type=block) for block in coreNightBlocks]
     existingLevelBlocks = LevelBlock.objects.filter(level=level)
     remainingBlocks = existingLevelBlocks.exclude(type__type__in=coreBlockTypes).order_by('type')
     levelBlocks = sorted(list(chain(coreNightLevelBlocks, remainingBlocks)), key=lambda levelBlock: levelBlock.type.id)
@@ -156,7 +156,7 @@ def set_blocks_inner(level, blocks, LevelBlock, Block):
 
 
 def blocks_dictionary(blocks, Block):
-    types = map(lambda data: data['type'], blocks)
+    types = [data['type'] for data in blocks]
     block_objects = Block.objects.filter(type__in=types)
     result = {block.type: block for block in block_objects}
     return result

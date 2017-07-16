@@ -223,10 +223,10 @@ class ScoreboardCsvTestCase(TestCase):
         assert_that(actual_rows, equal_to(expected_rows))
 
     def expected_rows_single_level(self, student_rows):
-        return map(self.expected_row_single_level, student_rows) + [""]
+        return [self.expected_row_single_level(r) for r in student_rows] + [""]
 
     def expected_rows_multiple_levels(self, student_rows):
-        return map(self.expected_row_multiple_levels, student_rows) + [""]
+        return [self.expected_row_multiple_levels(r) for r in student_rows] + [""]
 
     def student_row(self, class_name=None):
         email, password = signup_teacher_directly()
@@ -261,7 +261,7 @@ class ScoreboardCsvTestCase(TestCase):
             student_row.class_field.name.encode('utf-8'), student_row.name)
 
     def expected_header(self, levels):
-        level_strings = map(str, levels)
+        level_strings = [str(l) for l in levels]
         all_header_strings = Headers + level_strings
         joined = ','.join(all_header_strings)
         return joined
@@ -320,7 +320,7 @@ def create_attempt(student, level, score):
 def ids_of_levels_named(names):
     levels = Level.objects.filter(name__in=names)
     assert_that(len(levels), equal_to(len(names)))
-    level_ids = map(lambda x: x.id, levels)
+    level_ids = [x.id for x in levels]
     return level_ids
 
 
