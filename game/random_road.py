@@ -134,7 +134,7 @@ def generate_random_map_data(num_tiles, branchiness, loopiness, curviness, traff
 def generate_random_path(num_road_tiles, branchiness_factor, loopiness_factor, curviness_factor):
 
     def pick_adjacent_node(nodes, connections, branchiness_factor, curviness_factor):
-        for attempts in xrange(5):
+        for attempts in range(5):
             origin = pick_origin_node(nodes, connections, branchiness_factor)
             possibles = []
 
@@ -259,7 +259,7 @@ def generate_random_path(num_road_tiles, branchiness_factor, loopiness_factor, c
     index_by_node = {nodes[0]: 0}
     connections = defaultdict(list)
 
-    for _ in xrange(num_road_tiles - 1):
+    for _ in range(num_road_tiles - 1):
         (previous_node, new_node) = pick_adjacent_node(nodes, connections, branchiness_factor,
                                                        curviness_factor)
         if new_node:
